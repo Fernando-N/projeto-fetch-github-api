@@ -14,7 +14,7 @@ const screen = {
             <p>${user.followers ?? 'Não possui seguidores'}</p>
           </div>
           <div class="following">
-          <i class="fa-solid fa-user-group">Seguidores</i>
+          <i class="fa-solid fa-user-group">Seguindo</i>
           <p>${user.following ?? 'Não segue ninguém'}</p>
         </div>
         </div>
