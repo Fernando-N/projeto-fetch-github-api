@@ -46,17 +46,20 @@ const screen = {
     `
     }
 
-    let activitiesItens = ''
-    user.activities.forEach(act => {
-      if (act.type === 'PushEvent') {
-        activitiesItens += `<li><p><span>${act.repo.name}</span>: ${act.payload.commits[0].message}</p></li>`
+    let eventsItens = ''
+    user.events.forEach(event => {
+      if (event.type === 'PushEvent') {
+        eventsItens += `<li><p><span>${event.repo.name}</span>: ${event.payload.commits[0].message}</p></li>`
+      } else {
+        eventsItens += `<li><p>Nenhuma atividade recente</p></li>`
       }
     })
-    if (user.activities.length > 0) {
+
+    if (user.events.length > 0) {
       this.userProfile.innerHTML += `
-        <div class="activities section">
+        <div class="events section">
           <h2>Atividades</h2>
-          <ul>${activitiesItens}</ul>
+          <ul>${eventsItens}</ul>
         </div>
       `
     }

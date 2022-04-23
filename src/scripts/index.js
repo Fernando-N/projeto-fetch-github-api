@@ -41,7 +41,7 @@ async function getUserData(userName) {
   user.setRepositories(repositoriesResponse)
 
   const eventsResponse = await getEvents(userName)
-  user.setActivities(eventsResponse)
+  user.setEvents(eventsResponse)
 
   screen.renderUser(user)
 }
